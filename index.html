@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RavenSec</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Solway&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Solway&amp;display=swap">
     <style>
         body {
-            background: linear-gradient(-45deg, #121212, #121212,  #074d27, #141414, #141414);
+            background: linear-gradient(-45deg, #121212, #121212, #09763b, #141414, #141414);
             background-size: 400% 400%;
             animation: gradient 15s linear infinite;
             height: 100vh;
-            margin: 0; /* Remova margens padrão */
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            margin: 0;
+            overflow: hidden;
         }
+
         @keyframes gradient {
             0% {
                 background-position: 0% 50%;
@@ -26,19 +24,22 @@
             100% {
                 background-position: 0% 50%;
             }
+
         }
+
         #rectangle {
+            position: absolute;
+            top: 30px;
+            left: 50%;
+            transform: translate(-50%, 0);
             width: 340px;
             height: 470px;
             border-radius: 20px;
             backdrop-filter: blur(16px) saturate(250%);
             -webkit-backdrop-filter: blur(16px) saturate(180%);
             background-color: rgba(55, 55, 55, 0.75);
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Centralizar na horizontal */
-            justify-content: center; /* Centralizar na vertical */
         }
+
         #download-button {
             display: inline-flex;
             align-items: center;
@@ -49,22 +50,67 @@
             padding: 10px 20px;
             border-radius: 20px;
             text-decoration: none;
-            margin-top: 20px; /* Adiciona um espaço entre a imagem e o botão */
+            margin-left: 27.5%;
             transition: background-color 0.3s ease;
         }
+
         #download-button:hover {
             background-color: #000;
         }
+
         #centered-image {
+            display: block;
+            margin: 50px auto;
             max-width: 80%;
             max-height: 285px;
             width: auto;
             height: auto;
         }
+
         #download-icon {
             margin-right: 10px;
             width: 20px;
             height: 20px;
+        }
+
+        #ball-container {
+            position: absolute;
+            bottom: 20px;
+            left: 20px; /* Alinhe à esquerda */
+            display: flex;
+            flex-direction: row; /* Alinhe os elementos horizontalmente */
+            align-items: center;
+        }
+
+        .ball {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            margin-right: 10px; /* Adicione espaçamento horizontal entre as bolas */
+            backdrop-filter: blur(16px) saturate(250%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            background-color: rgba(55, 55, 55, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFFFFF;
+            font-size: 14px;
+            font-weight: bold;
+            position: relative; /* Added for positioning the icon */
+        }
+
+        .ball::before {
+            content: ""; /* Empty content to allow background image */
+            width: 50%;
+            height: 50%;
+            background: url('Group.png') center/cover no-repeat; /* Replace 'your-icon.png' with your icon image */
+            position: absolute;
+        }
+
+        .ball span {
+            text-align: left; /* Alinhe o texto à esquerda */
+            max-width: 100%;
+            padding: 5px;
         }
     </style>
 </head>
@@ -76,6 +122,15 @@
             Download
         </a>
     </div>
+
+    <div id="ball-container">
+        <div class="ball"></div>
+        <a span style="margin-right: 10px;color: white; font-family: Solway, sans-serif; font-size:13px;" href="https://www.linkedin.com/in/prrf/">/in/prrf</a>
+        <div class="ball"></div>
+        <a span style="margin-right: 10px;color: white; font-family: Solway, sans-serif; font-size:13px;" href="https://www.linkedin.com/in/alfeli/">/in/alfeli</a>
+        <div class="ball"></div>
+        <a span style="margin-right: 10px;color: white; font-family: Solway, sans-serif; font-size:13px;" href="https://www.linkedin.com/in/mateus-taveira/">/in/mateus-taveira</a>
+    </div>
     <script>
         function downloadFunction() {
             // Substitua esta função por sua lógica de download
@@ -83,5 +138,8 @@
             // Aqui você pode adicionar código para iniciar o download real
         }
     </script>
+
+
 </body>
+
 </html>
